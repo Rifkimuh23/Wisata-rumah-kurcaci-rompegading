@@ -4,34 +4,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wisata Rumah Kurcaci - Rompegading</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, /* Durasi animasi 1 detik */
+    once: true, /* Animasi hanya terjadi sekali saat scroll ke bawah */
+  });
+</script>
+<body>
     <nav>
       <div class="logo">Rumah<span>Kurcaci</span></div>
       <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#lokasi">Lokasi</a></li>
+        <li><a href="#umkm">UMKM</a></li>
       </ul>
     </nav>
 
     <header id="home">
       <div class="hero-text">
         <h1>Selamat Datang di Rumah Kurcaci</h1>
+        <h1 data-aos="fade-up">Selamat Datang...</h1>
         <p>Pesona Alam Desa Rompegading, Cenrana, Maros</p>
         <a href="#about" class="btn">Lihat Selengkapnya</a>
       </div>
     </header>
 
-    <section id="about">
-      <h2>Tentang Rumah Kurcaci</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto">
-        Rumah Kurcaci adalah destinasi wisata unik yang terletak di Desa
-        Rompegading. Menawarkan suasana pegunungan yang asri dan spot foto
-        ikonik, tempat ini menjadi salah satu daya tarik utama di Kecamatan
-        Cenrana, Kabupaten Maros.
-      </p>
+  <section id="about">
+      <div class="about-text-centered">
+        <div class="gallery-container" data-aos="zoom-in"></div>
+        <h2>Tentang Rumah Kurcaci</h2>
+        <p>
+          Rumah Kurcaci adalah destinasi wisata unik yang terletak di Desa
+          Rompegading. Menawarkan suasana pegunungan yang asri dan spot foto
+          ikonik, tempat ini menjadi salah satu daya tarik utama di Kecamatan
+          Cenrana, Kabupaten Maros.
+        </p>
+      </div>
+
+      <div class="gallery-container">
+        <img src="imgjpgvidio/Depan.jpeg" alt="Tampilan Depan Rumah Kurcaci">
+        <img src="imgjpgvidio/Pemandang.jpeg" alt="Pemandangan Alam">
+      </div>
     </section>
+
+    <section id="umkm">
+  <h2>Pojok UMKM Desa</h2>
+  <p style="text-align: center; margin-bottom: 30px;">Dukung ekonomi lokal dengan membeli produk unggulan Desa Rompegading</p>
+  
+  <div class="umkm-container">
+    
+    <div class="umkm-card" data-aos="fade-up">
+      <img src="imgjpgvidio/kopi.jpg" alt="Kopi Rompegading"> 
+      <div class="card-content">
+        <h3>Kopi Robusta Desa</h3>
+        <p>Kopi petik merah asli pegunungan Cenrana dengan aroma khas.</p>
+        <span class="price">Rp 25.000 / pcs</span>
+        <a href="https://wa.me/6281234567890?text=Halo, saya mau pesan Kopi" class="btn-beli">Pesan via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="umkm-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="imgjpgvidio/keripik.jpg" alt="Keripik Jagung">
+      <div class="card-content">
+        <h3>Keripik Jagung Gurih</h3>
+        <p>Camilan renyah hasil olahan petani jagung lokal Rompegading.</p>
+        <span class="price">Rp 10.000 / pcs</span>
+        <a href="https://wa.me/6281234567890?text=Halo, saya mau pesan Keripik" class="btn-beli">Pesan via WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="umkm-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="imgjpgvidio/gula.jpg" alt="Gula Aren">
+      <div class="card-content">
+        <h3>Gula Aren Asli</h3>
+        <p>Gula merah murni tanpa bahan pengawet, cocok untuk pemanis alami.</p>
+        <span class="price">Rp 15.000 / butir</span>
+        <a href="https://wa.me/6281234567890?text=Halo, saya mau pesan Gula Aren" class="btn-beli">Pesan via WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <section id="lokasi">
       <h2>Lokasi Kami</h2>
@@ -45,6 +103,43 @@
           loading="lazy"
         >
         </iframe>
+      </div>
+    </section>
+
+    <section id="umkm">
+      <h2>Pojok UMKM Desa</h2>
+      <p style="text-align: center; margin-bottom: 30px;">Oleh-oleh khas dan kerajinan tangan asli warga Rompegading</p>
+      
+      <div class="umkm-container">
+        <div class="umkm-card">
+          <img src="imgjpgvidio/kopi.jpg" alt="Kopi Rompegading"> 
+          <div class="card-content">
+            <h3>Kopi Robusta Desa</h3>
+            <p>Kopi petik merah asli pegunungan Cenrana dengan aroma khas.</p>
+            <span class="price">Rp 25.000 / pcs</span>
+            <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Kopi" class="btn-beli">Beli Sekarang</a>
+          </div>
+        </div>
+
+        <div class="umkm-card">
+          <img src="imgjpgvidio/keripik.jpg" alt="Keripik Jagung">
+          <div class="card-content">
+            <h3>Keripik Jagung</h3>
+            <p>Camilan gurih dari hasil panen jagung lokal.</p>
+            <span class="price">Rp 10.000 / pcs</span>
+            <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Keripik" class="btn-beli">Beli Sekarang</a>
+          </div>
+        </div>
+
+        <div class="umkm-card">
+          <img src="imgjpgvidio/gula.jpg" alt="Gula Aren">
+          <div class="card-content">
+            <h3>Gula Aren Asli</h3>
+            <p>Gula merah alami tanpa bahan pengawet.</p>
+            <span class="price">Rp 15.000 / butir</span>
+            <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Gula" class="btn-beli">Beli Sekarang</a>
+          </div>
+        </div>
       </div>
     </section>
 

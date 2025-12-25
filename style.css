@@ -1,124 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-nav { display: flex; justify-content: space-between; padding: 20px 8%; background: #2d4739; color: white; position: fixed; width: 100%; z-index: 1000; }
-nav ul { display: flex; list-style: none; }
-nav ul li a { color: white; text-decoration: none; margin-left: 30px; }
-header { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000'); background-size: cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-section { padding: 80px 8%; }
-h2 { text-align: center; margin-bottom: 20px; }
-.map-container { width: 100%; height: 400px; border-radius: 10px; overflow: hidden; }
-footer { background: #2d4739; color: white; text-align: center; padding: 20px; }
-.btn { padding: 10px 20px; background: #d4a373; color: white; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 15px; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 8%;
+  /* Ganti background solid dengan rgba (transparan) */
+  background: rgba(45, 71, 57, 0.8);
+  /* Tambahkan efek blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis tipis halus */
+  transition: 0.3s;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+}
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("imgjpgvidio/Rumah.jpeg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+section {
+  padding: 80px 8%;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+footer {
+  background: #2d4739;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.btn {
+  padding: 10px 20px;
+  background: #d4a373;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+}
 
 /* ----- PENGATURAN RESPONSIVE ----- */
 
 /* Untuk Tablet (Lebar layar di bawah 992px) */
 @media (max-width: 992px) {
-    nav {
-        padding: 15px 5%;
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    section {
-        padding: 60px 5%;
-    }
+  nav {
+    padding: 15px 5%;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  section {
+    padding: 60px 5%;
+  }
 }
 
 /* Untuk HP (Lebar layar di bawah 768px) */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Menu jadi susun ke bawah */
-        padding: 15px;
-    }
-    
-    nav ul {
-        margin-top: 15px;
-    }
+  nav {
+    flex-direction: column; /* Menu jadi susun ke bawah */
+    padding: 15px;
+  }
 
-    nav ul li {
-        margin: 0 10px; /* Jarak menu dipersempit */
-    }
+  nav ul {
+    margin-top: 15px;
+  }
 
-    nav ul li a {
-        margin-left: 0;
-        font-size: 13px;
-    }
+  nav ul li {
+    margin: 0 10px; /* Jarak menu dipersempit */
+  }
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
+  nav ul li a {
+    margin-left: 0;
+    font-size: 13px;
+  }
 
-    .hero-text p {
-        font-size: 14px;
-        padding: 0 20px;
-    }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 
-    .map-container {
-        height: 300px; /* Peta sedikit lebih kecil di HP */
-    }
+  .hero-text p {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .map-container {
+    height: 300px; /* Peta sedikit lebih kecil di HP */
+  }
 }
 
 /* Contact Section */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: #f9f9f9;
-    padding: 40px;
-    border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 15px;
 }
 
 .contact-info h3 {
-    color: #2d4739;
-    margin-bottom: 20px;
+  color: #2d4739;
+  margin-bottom: 20px;
 }
 
 .contact-info p {
-    margin-bottom: 10px;
-    color: #555;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 .btn-whatsapp {
-    display: inline-block;
-    background-color: #25d366;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s;
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: 0.3s;
 }
 
 .btn-whatsapp:hover {
-    background-color: #128c7e;
+  background-color: #128c7e;
 }
 
 /* Form Styling */
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .contact-form .btn {
-    width: 100%;
-    cursor: pointer;
-    border: none;
+  width: 100%;
+  cursor: pointer;
+  border: none;
 }
 
 /* Untuk HP Kecil (Lebar layar di bawah 480px) */
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 1.8rem;
-    }
-    
-    .btn {
-        width: 100%; /* Tombol jadi lebar penuh agar mudah diklik jempol */
-        text-align: center;
-    }
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%; /* Tombol jadi lebar penuh agar mudah diklik jempol */
+    text-align: center;
+  }
+}
+
+/* --- TAMPILAN BARU BAGIAN TENTANG --- */
+
+/* 1. Mengatur Teks agar Rata Tengah */
+.about-text-centered {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto; /* Margin bawah 50px memberi jarak ke gambar */
+}
+
+.about-text-centered p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 2. Mengatur Wadah Gambar (Galeri) */
+.gallery-container {
+  display: flex; /* Membuat gambar bersebelahan */
+  justify-content: center; /* Posisi di tengah layar */
+  gap: 20px; /* Jarak antar gambar */
+  flex-wrap: wrap; /* Agar gambar turun ke bawah jika layar sempit (HP) */
+}
+
+/* 3. Mengatur Ukuran dan Gaya Gambar */
+.gallery-container img {
+  width: 45%; /* Lebar gambar mengambil 45% layar masing-masing */
+  max-width: 500px; /* Batas lebar maksimal */
+  height: 300px; /* Menyamakan tinggi kedua gambar agar rapi */
+  object-fit: cover; /* Memastikan gambar tidak gepeng/tertarik (crop otomatis) */
+  border-radius: 15px; /* Sudut melengkung */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  transition: transform 0.3s ease;
+}
+
+/* Efek saat kursor diarahkan ke gambar */
+.gallery-container img:hover {
+  transform: scale(1.03); /* Gambar sedikit membesar */
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+  .gallery-container img {
+    width: 100%; /* Di HP, gambar jadi lebar penuh (atas-bawah) */
+    height: auto; /* Tinggi menyesuaikan */
+    margin-bottom: 15px;
+  }
+}
+
+/* --- GAYA KHUSUS SECTION UMKM --- */
+
+.umkm-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Agar kartu turun ke bawah jika layar penuh */
+  gap: 30px; /* Jarak antar kartu */
+  margin-top: 20px;
+}
+
+.umkm-card {
+  background: white;
+  width: 300px; /* Lebar setiap kartu */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Agar gambar tidak keluar dari sudut melengkung */
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.umkm-card:hover {
+  transform: translateY(
+    -10px
+  ); /* Efek kartu naik sedikit saat disentuh kursor */
+}
+
+.umkm-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Agar gambar produk rapi dan sama ukurannya */
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  color: #2d4739;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.price {
+  display: block;
+  font-weight: bold;
+  color: #d4a373; /* Warna emas/coklat muda */
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.btn-beli {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #2d4739; /* Hijau tua senada dengan tema */
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-beli:hover {
+  background-color: #1a2e24;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .umkm-card {
+    width: 100%; /* Di HP kartu jadi lebar penuh */
+    max-width: 350px;
+  }
 }
