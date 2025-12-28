@@ -199,21 +199,21 @@ footer {
 
 /* 2. Mengatur Wadah Gambar (Galeri) */
 .gallery-container {
-  display: flex; /* Membuat gambar bersebelahan */
-  justify-content: center; /* Posisi di tengah layar */
-  gap: 20px; /* Jarak antar gambar */
-  flex-wrap: wrap; /* Agar gambar turun ke bawah jika layar sempit (HP) */
+  display: flex;
+  justify-content: center;
+  gap: 15px;       /* Jarak antar gambar diperkecil sedikit */
+  flex-wrap: wrap; 
 }
 
-/* 3. Mengatur Ukuran dan Gaya Gambar */
 .gallery-container img {
-  width: 45%; /* Lebar gambar mengambil 45% layar masing-masing */
-  max-width: 500px; /* Batas lebar maksimal */
-  height: 300px; /* Menyamakan tinggi kedua gambar agar rapi */
-  object-fit: cover; /* Memastikan gambar tidak gepeng/tertarik (crop otomatis) */
-  border-radius: 15px; /* Sudut melengkung */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-  transition: transform 0.3s ease;
+  width: 30%;          /* Lebar tetap agar muat 3 gambar */
+  height: auto;        /* PENTING: Tinggi mengikuti ukuran asli gambar */
+  object-fit: cover;   /* Ganti ke cover agar mengisi lebar sepenuhnya */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Bayangan tipis */
+  
+  /* HAPUS bagian background-color agar tidak ada warna sisa */
+  /* background-color: #f4f4f4;  <-- Baris ini dihapus saja */
 }
 
 /* Efek saat kursor diarahkan ke gambar */
@@ -234,20 +234,28 @@ footer {
 
 .umkm-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Agar kartu turun ke bawah jika layar penuh */
-  gap: 30px; /* Jarak antar kartu */
+  justify-content: center; /* Mengatur agar kartu berada di tengah layar */
+  align-items: stretch;    /* Memaksa tinggi semua kartu SAMA RATA */
+  flex-wrap: wrap;         /* Agar kalau layar sempit, kartu turun ke bawah rapi */
+  gap: 30px;               /* Jarak antar kartu */
   margin-top: 20px;
 }
 
 .umkm-card {
+  width: 300px;            /* Lebar kartu ditetapkan */
   background: white;
-  width: 300px; /* Lebar setiap kartu */
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Agar gambar tidak keluar dari sudut melengkung */
-  transition: transform 0.3s ease;
-  border: 1px solid #eee;
+  overflow: hidden;
+  display: flex;           /* Aktifkan flex di dalam kartu */
+  flex-direction: column;  /* Susun isinya (Gambar, teks, tombol) ke bawah */
+}
+
+.umkm-card img {
+  width: 100%;             /* Lebar penuh sesuai kartu */
+  height: 250px;           /* Tinggi gambar WAJIB disamakan agar sejajar */
+  object-fit: cover;       /* Gambar dipotong rapi memenuhi kotak (TIDAK ADA PUTIH) */
+  display: block;          /* Menghilangkan celah garis halus di bawah gambar */
 }
 
 .umkm-card:hover {
@@ -265,8 +273,11 @@ footer {
 .card-content {
   padding: 20px;
   text-align: center;
+  flex-grow: 1;            /* Memaksa konten mengisi sisa ruang agar tombol sejajar di bawah */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Teks di atas, tombol di paling bawah */
 }
-
 .card-content h3 {
   font-size: 1.2rem;
   color: #2d4739;
@@ -304,8 +315,20 @@ footer {
 
 /* Responsif untuk HP */
 @media (max-width: 768px) {
+  /* Di HP, kembalikan gambar jadi besar agar jelas */
+  .gallery-container img {
+    width: 45%;  /* Muat 2 gambar di HP */
+    height: 150px; 
+  }
+
+  /* Atau kalau mau 1 gambar besar per baris di HP: */
+  /* .gallery-container img {
+    width: 100%; 
+    height: auto; 
+  } 
+  */
+
   .umkm-card {
-    width: 100%; /* Di HP kartu jadi lebar penuh */
-    max-width: 350px;
+    width: 45%; /* Kartu UMKM jadi 2 berjejer di HP */
   }
 }
