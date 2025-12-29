@@ -35,7 +35,7 @@ header {
   height: auto;
   aspect-ratio: 16 / 9; /* Sesuaikan dengan rasio gambar asli kamu */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url("imgjpgvidio/Latbel.jpeg");
+    url("imgjpgvidio/Latbel.jpeg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -205,17 +205,17 @@ footer {
 .gallery-container {
   display: flex;
   justify-content: center;
-  gap: 15px;       /* Jarak antar gambar diperkecil sedikit */
-  flex-wrap: wrap; 
+  gap: 15px; /* Jarak antar gambar diperkecil sedikit */
+  flex-wrap: wrap;
 }
 
 .gallery-container img {
-  width: 30%;          /* Lebar tetap agar muat 3 gambar */
-  height: auto;        /* PENTING: Tinggi mengikuti ukuran asli gambar */
-  object-fit: cover;   /* Ganti ke cover agar mengisi lebar sepenuhnya */
+  width: 30%; /* Lebar tetap agar muat 3 gambar */
+  height: auto; /* PENTING: Tinggi mengikuti ukuran asli gambar */
+  object-fit: cover; /* Ganti ke cover agar mengisi lebar sepenuhnya */
   border-radius: 10px; /* Sudut melengkung */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Bayangan tipis */
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan tipis */
+
   /* HAPUS bagian background-color agar tidak ada warna sisa */
   /* background-color: #f4f4f4;  <-- Baris ini dihapus saja */
 }
@@ -239,27 +239,27 @@ footer {
 .umkm-container {
   display: flex;
   justify-content: center; /* Mengatur agar kartu berada di tengah layar */
-  align-items: stretch;    /* Memaksa tinggi semua kartu SAMA RATA */
-  flex-wrap: wrap;         /* Agar kalau layar sempit, kartu turun ke bawah rapi */
-  gap: 30px;               /* Jarak antar kartu */
+  align-items: stretch; /* Memaksa tinggi semua kartu SAMA RATA */
+  flex-wrap: wrap; /* Agar kalau layar sempit, kartu turun ke bawah rapi */
+  gap: 30px; /* Jarak antar kartu */
   margin-top: 20px;
 }
 
 .umkm-card {
-  width: 300px;            /* Lebar kartu ditetapkan */
+  width: 300px; /* Lebar kartu ditetapkan */
   background: white;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  display: flex;           /* Aktifkan flex di dalam kartu */
-  flex-direction: column;  /* Susun isinya (Gambar, teks, tombol) ke bawah */
+  display: flex; /* Aktifkan flex di dalam kartu */
+  flex-direction: column; /* Susun isinya (Gambar, teks, tombol) ke bawah */
 }
 
 .umkm-card img {
-  width: 100%;             /* Lebar penuh sesuai kartu */
-  height: 250px;           /* Tinggi gambar WAJIB disamakan agar sejajar */
-  object-fit: cover;       /* Gambar dipotong rapi memenuhi kotak (TIDAK ADA PUTIH) */
-  display: block;          /* Menghilangkan celah garis halus di bawah gambar */
+  width: 100%; /* Lebar penuh sesuai kartu */
+  height: 250px; /* Tinggi gambar WAJIB disamakan agar sejajar */
+  object-fit: cover; /* Gambar dipotong rapi memenuhi kotak (TIDAK ADA PUTIH) */
+  display: block; /* Menghilangkan celah garis halus di bawah gambar */
 }
 
 .umkm-card:hover {
@@ -277,7 +277,7 @@ footer {
 .card-content {
   padding: 20px;
   text-align: center;
-  flex-grow: 1;            /* Memaksa konten mengisi sisa ruang agar tombol sejajar di bawah */
+  flex-grow: 1; /* Memaksa konten mengisi sisa ruang agar tombol sejajar di bawah */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Teks di atas, tombol di paling bawah */
@@ -321,8 +321,8 @@ footer {
 @media (max-width: 768px) {
   /* Di HP, kembalikan gambar jadi besar agar jelas */
   .gallery-container img {
-    width: 45%;  /* Muat 2 gambar di HP */
-    height: 150px; 
+    width: 45%; /* Muat 2 gambar di HP */
+    height: 150px;
   }
 
   /* Atau kalau mau 1 gambar besar per baris di HP: */
@@ -335,4 +335,115 @@ footer {
   .umkm-card {
     width: 45%; /* Kartu UMKM jadi 2 berjejer di HP */
   }
+}
+/* Gaya untuk jendela gambar besar (Lightbox) */
+.lightbox {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    z-index: 2000; /* Harus lebih tinggi dari NAV (1000) */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Latar hitam transparan */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: zoomEffect 0.3s ease; /* Animasi muncul */
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Tambahkan kursor tangan pada gambar galeri */
+.gallery-container img, .umkm-card img {
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+
+/* Gaya Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 80%;
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Tombol Navigasi (Kanan & Kiri) */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+/* Responsif untuk HP agar tombol tidak menutupi gambar */
+@media (max-width: 768px) {
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
 }
