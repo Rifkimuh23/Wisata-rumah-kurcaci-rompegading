@@ -31,16 +31,20 @@ nav ul li a {
   margin-left: 30px;
 }
 header {
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Sesuaikan dengan rasio gambar asli kamu */
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("imgjpgvidio/Rumah.jpeg");
+              url("imgjpgvidio/Latbel.jpeg");
   background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
 }
+
 section {
   padding: 80px 8%;
 }
