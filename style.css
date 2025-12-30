@@ -203,25 +203,27 @@ footer {
   background-color: #1a2e24;
 }
 
-/* --- CONTACT SECTION --- */
+/* --- CONTACT SECTION (DIPERBAIKI FULL) --- */
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* WAJIB: Agar otomatis turun ke bawah jika layar sempit */
   justify-content: space-between;
-  gap: 40px;
+  gap: 30px;
   background: #f9f9f9;
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Mencegah konten keluar dari kotak */
 }
 
 .contact-info,
 .contact-form {
-  flex: 1 1 300px;
-  min-width: 280px;
+  flex: 1 1 300px; /* Fleksibel, tapi minimal 300px sebelum turun ke bawah */
+  min-width: 0; /* PENTING: Mencegah flex item menolak mengecil */
 }
 
+/* Mengatur Teks Info */
 .contact-info h3 {
   color: #2d4739;
   margin-bottom: 20px;
@@ -233,9 +235,14 @@ footer {
   color: #555;
   line-height: 1.6;
   font-size: 0.95rem;
+  
+  /* PENTING: Agar email panjang otomatis turun baris/terpotong rapi */
   word-wrap: break-word;
+  word-break: break-word; 
+  overflow-wrap: break-word;
 }
 
+/* Tombol WA */
 .btn-whatsapp {
   display: inline-block;
   background-color: #25d366;
@@ -245,15 +252,12 @@ footer {
   border-radius: 8px;
   font-weight: bold;
   margin-top: 15px;
-  transition: 0.3s;
   box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  width: 100%; /* Di HP tombol jadi lebar penuh agar rapi */
+  text-align: center;
 }
 
-.btn-whatsapp:hover {
-  background-color: #128c7e;
-  transform: translateY(-2px);
-}
-
+/* Form Styling */
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -262,20 +266,40 @@ footer {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 0.95rem;
-  background: white;
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
 }
 
 .contact-form .btn {
   width: 100%;
   cursor: pointer;
   border: none;
-  font-weight: 600;
-  padding: 15px;
+  padding: 12px;
+}
+
+/* --- PAKSA TAMPILAN HP (MEDIA QUERY) --- */
+/* Pastikan ini ada di bagian paling bawah atau setelah kode di atas */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Paksa susun ke bawah */
+    padding: 20px; /* Kurangi padding biar luas */
+    gap: 40px;
+  }
+  
+  .contact-info, 
+  .contact-form {
+    width: 100%; /* Lebar penuh */
+    flex: none;
+  }
+  
+  /* Agar email benar-benar aman di layar kecil */
+  .contact-info p {
+    font-size: 0.9rem;
+  }
 }
 
 /* --- LIGHTBOX (HANYA SATU VERSI) --- */
