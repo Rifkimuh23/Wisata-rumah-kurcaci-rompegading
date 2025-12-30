@@ -6,34 +6,40 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   padding: 15px 8%;
-  /* Ganti background solid dengan rgba (transparan) */
   background: rgba(45, 71, 57, 0.8);
-  /* Tambahkan efek blur */
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis tipis halus */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: 0.3s;
 }
+
 nav ul {
   display: flex;
   list-style: none;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
   margin-left: 30px;
 }
+
 header {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; /* Sesuaikan dengan rasio gambar asli kamu */
+  aspect-ratio: 16 / 9;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("imgjpgvidio/Latbel.jpeg");
   background-size: cover;
@@ -48,31 +54,19 @@ header {
 section {
   padding: 80px 8%;
 }
+
 h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-.map-container {
-  width: 100%;
-  height: 450px; /* Pastikan tinggi ini jelas, jangan hanya 100% */
-  border-radius: 15px;
-  overflow: hidden;
-  margin: 20px auto;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
 
-/* Tambahkan ini agar iframe mengikuti kotak */
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
 footer {
   background: #2d4739;
   color: white;
   text-align: center;
   padding: 20px;
 }
+
 .btn {
   padding: 10px 20px;
   background: #d4a373;
@@ -83,126 +77,27 @@ footer {
   margin-top: 15px;
 }
 
-/* ----- PENGATURAN RESPONSIVE ----- */
-
-/* Untuk Tablet (Lebar layar di bawah 992px) */
-@media (max-width: 992px) {
-  nav {
-    padding: 15px 5%;
-  }
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-  section {
-    padding: 60px 5%;
-  }
-}
-
-/* Untuk HP (Lebar layar di bawah 768px) */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column; /* Menu jadi susun ke bawah */
-    padding: 15px;
-  }
-
-  nav ul {
-    margin-top: 15px;
-  }
-
-  nav ul li {
-    margin: 0 10px; /* Jarak menu dipersempit */
-  }
-
-  nav ul li a {
-    margin-left: 0;
-    font-size: 13px;
-  }
-
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 14px;
-    padding: 0 20px;
-  }
-
-  .map-container {
-    height: 300px; /* Peta sedikit lebih kecil di HP */
-  }
-}
-
-/* Contact Section */
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  background: #f9f9f9;
-  padding: 40px;
+/* --- MAPS SECTION --- */
+.map-container {
+  width: 100%;
+  height: 450px; /* Tinggi peta di Laptop */
   border-radius: 15px;
+  overflow: hidden;
+  margin: 20px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info h3 {
-  color: #2d4739;
-  margin-bottom: 20px;
-}
-
-.contact-info p {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.btn-whatsapp {
-  display: inline-block;
-  background-color: #25d366;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-.btn-whatsapp:hover {
-  background-color: #128c7e;
-}
-
-/* Form Styling */
-.contact-form input,
-.contact-form textarea {
+.map-container iframe {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  height: 100%;
+  border: 0;
 }
 
-.contact-form .btn {
-  width: 100%;
-  cursor: pointer;
-  border: none;
-}
-
-/* Untuk HP Kecil (Lebar layar di bawah 480px) */
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .btn {
-    width: 100%; /* Tombol jadi lebar penuh agar mudah diklik jempol */
-    text-align: center;
-  }
-}
-
-/* --- TAMPILAN BARU BAGIAN TENTANG --- */
-
-/* 1. Mengatur Teks agar Rata Tengah */
+/* --- ABOUT SECTION --- */
 .about-text-centered {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 50px auto; /* Margin bawah 50px memberi jarak ke gambar */
+  margin: 0 auto 50px auto;
 }
 
 .about-text-centered p {
@@ -210,45 +105,32 @@ footer {
   color: #333;
 }
 
-/* 2. Mengatur Wadah Gambar (Galeri) */
 .gallery-container {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Jarak antar gambar diperkecil sedikit */
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .gallery-container img {
-  width: 30%; /* Lebar tetap agar muat 3 gambar */
-  height: auto; /* PENTING: Tinggi mengikuti ukuran asli gambar */
-  object-fit: cover; /* Ganti ke cover agar mengisi lebar sepenuhnya */
-  border-radius: 10px; /* Sudut melengkung */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan tipis */
-
-  /* HAPUS bagian background-color agar tidak ada warna sisa */
-  /* background-color: #f4f4f4;  <-- Baris ini dihapus saja */
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: zoom-in;
+  transition: 0.3s;
 }
 
-/* Efek saat kursor diarahkan ke gambar */
 .gallery-container img:hover {
-  transform: scale(1.03); /* Gambar sedikit membesar */
+  transform: scale(1.03);
 }
 
-/* --- RESPONSIVE UNTUK HP --- */
-@media (max-width: 768px) {
-  .gallery-container img {
-    width: 100%; /* Di HP, gambar jadi lebar penuh (atas-bawah) */
-    height: auto; /* Tinggi menyesuaikan */
-    margin-bottom: 15px;
-  }
-}
-
-/* --- GAYA KHUSUS SECTION UMKM --- */
-
+/* --- UMKM SECTION --- */
 .umkm-container {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Ini kunci agar tinggi kartu sama semua */
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 20px;
@@ -261,38 +143,31 @@ footer {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Menyusun isi ke bawah */
+  flex-direction: column;
   transition: 0.3s;
 }
 
-.umkm-card img {
-  width: 100%; /* Lebar penuh sesuai kartu */
-  height: 250px; /* Tinggi gambar WAJIB disamakan agar sejajar */
-  object-fit: cover; /* Gambar dipotong rapi memenuhi kotak (TIDAK ADA PUTIH) */
-  display: block; /* Menghilangkan celah garis halus di bawah gambar */
-}
-
 .umkm-card:hover {
-  transform: translateY(
-    -10px
-  ); /* Efek kartu naik sedikit saat disentuh kursor */
+  transform: translateY(-10px);
 }
 
-/* Pastikan gambar UMKM tingginya seragam */
 .umkm-card img {
   width: 100%;
-  height: 200px; 
+  height: 200px; /* Tinggi gambar produk */
   object-fit: cover;
+  display: block;
+  cursor: zoom-in;
 }
 
 .card-content {
   padding: 20px;
   text-align: center;
-  flex-grow: 1; /* Memaksa konten mengisi ruang kosong */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Membuat tombol beli selalu di paling bawah */
+  justify-content: space-between;
 }
+
 .card-content h3 {
   font-size: 1.2rem;
   color: #2d4739;
@@ -308,7 +183,7 @@ footer {
 .price {
   display: block;
   font-weight: bold;
-  color: #d4a373; /* Warna emas/coklat muda */
+  color: #d4a373;
   font-size: 1.1rem;
   margin-bottom: 15px;
 }
@@ -316,7 +191,7 @@ footer {
 .btn-beli {
   display: inline-block;
   padding: 8px 20px;
-  background-color: #2d4739; /* Hijau tua senada dengan tema */
+  background-color: #2d4739;
   color: white;
   text-decoration: none;
   border-radius: 20px;
@@ -328,78 +203,82 @@ footer {
   background-color: #1a2e24;
 }
 
-/* Responsif untuk HP */
-@media (max-width: 768px) {
-  /* Di HP, kembalikan gambar jadi besar agar jelas */
-  .gallery-container img {
-    width: 45%; /* Muat 2 gambar di HP */
-    height: 150px;
-  }
-
-  /* Atau kalau mau 1 gambar besar per baris di HP: */
-  /* .gallery-container img {
-    width: 100%; 
-    height: auto; 
-  } 
-  */
-
-  .umkm-card {
-    width: 45%; /* Kartu UMKM jadi 2 berjejer di HP */
-  }
-}
-/* Gaya untuk jendela gambar besar (Lightbox) */
-.lightbox {
-  display: none; /* Sembunyi secara default */
-  position: fixed;
-  z-index: 2000; /* Harus lebih tinggi dari NAV (1000) */
-  top: 0;
-  left: 0;
+/* --- CONTACT SECTION --- */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 15px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Latar hitam transparan */
-  justify-content: center;
-  align-items: center;
-  cursor: zoom-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border: 3px solid white;
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  animation: zoomEffect 0.3s ease; /* Animasi muncul */
+.contact-info,
+.contact-form {
+  flex: 1 1 300px;
+  min-width: 280px;
 }
 
-@keyframes zoomEffect {
-  from {
-    transform: scale(0.7);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.contact-info h3 {
+  color: #2d4739;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+.contact-info p {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25d366;
   color: white;
-  font-size: 50px;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
   font-weight: bold;
-  cursor: pointer;
-}
-
-/* Tambahkan kursor tangan pada gambar galeri */
-.gallery-container img,
-.umkm-card img {
-  cursor: zoom-in;
+  margin-top: 15px;
   transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
 }
 
-/* Gaya Lightbox */
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.contact-form .btn {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  padding: 15px;
+}
+
+/* --- LIGHTBOX (HANYA SATU VERSI) --- */
 .lightbox {
   display: none;
   position: fixed;
@@ -420,9 +299,14 @@ footer {
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   transition: transform 0.3s ease;
+  animation: zoomEffect 0.3s ease;
 }
 
-/* Tombol Navigasi (Kanan & Kiri) */
+@keyframes zoomEffect {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -442,12 +326,8 @@ footer {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.prev {
-  left: 30px;
-}
-.next {
-  right: 30px;
-}
+.prev { left: 30px; }
+.next { right: 30px; }
 
 .close-btn {
   position: absolute;
@@ -460,16 +340,49 @@ footer {
   z-index: 2001;
 }
 
-/* Responsif untuk HP agar tombol tidak menutupi gambar */
+/* --- RESPONSIVE / MEDIA QUERIES --- */
+@media (max-width: 992px) {
+  nav { padding: 15px 5%; }
+  .hero-text h1 { font-size: 2.5rem; }
+  section { padding: 60px 5%; }
+}
+
 @media (max-width: 768px) {
-  .nav-btn {
-    padding: 10px 15px;
-    font-size: 20px;
+  nav {
+    flex-direction: column;
+    padding: 15px;
   }
-  .prev {
-    left: 10px;
+  nav ul { margin-top: 15px; }
+  nav ul li { margin: 0 10px; }
+  nav ul li a { margin-left: 0; font-size: 13px; }
+  
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 14px; padding: 0 20px; }
+
+  /* Responsive Gallery & UMKM */
+  .gallery-container img { width: 100%; margin-bottom: 15px; }
+  .umkm-card { width: 45%; }
+  
+  /* Responsive Maps */
+  .map-container { height: 300px; }
+
+  /* Responsive Contact */
+  .contact-container {
+    padding: 25px;
+    flex-direction: column;
+    gap: 30px;
   }
-  .next {
-    right: 10px;
-  }
+  .contact-info, .contact-form { width: 100%; flex: none; }
+  .contact-info h3 { font-size: 1.3rem; }
+
+  /* Responsive Lightbox Buttons */
+  .nav-btn { padding: 10px 15px; font-size: 20px; }
+  .prev { left: 10px; }
+  .next { right: 10px; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 1.8rem; }
+  .btn { width: 100%; text-align: center; }
+  .umkm-card { width: 100%; } /* Kartu UMKM jadi 1 per baris di HP kecil */
 }
