@@ -686,3 +686,80 @@ nav {
   .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
+
+/* --- CSS GARIS ALUR STRUKTUR --- */
+
+/* Kontainer utama untuk mengatur posisi garis */
+.struktur-desa {
+    position: relative;
+    padding-top: 60px;
+}
+
+/* Garis vertikal utama dari Kepala Desa ke bawah */
+.tree-row {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Membuat garis penghubung antara Kades, Sekdes, dan jajaran KASI/KAUR */
+.sekdes::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: #2d4739; /* Warna garis hijau tua */
+}
+
+/* Garis horizontal panjang yang menghubungkan semua KASI & KAUR */
+.perangkat-grid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.perangkat-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #2d4739;
+}
+
+/* Garis vertikal kecil untuk setiap kartu KASI/KAUR agar menempel ke garis horizontal */
+.perangkat-grid .perangkat-card::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: #2d4739;
+    z-index: -1;
+}
+
+/* Garis putus-putus khusus untuk BPD (karena sifatnya koordinasi/sejajar) */
+.line-horizontal {
+    height: 2px;
+    width: 50px;
+    background: repeating-linear-gradient(to right, #2d4739 0, #2d4739 5px, transparent 5px, transparent 10px);
+    align-self: center;
+}
+
+/* Responsive: Sembunyikan garis di HP agar tidak berantakan */
+@media (max-width: 768px) {
+    .perangkat-grid::before, 
+    .perangkat-grid .perangkat-card::before,
+    .sekdes::before {
+        display: none;
+    }
+    
+    .perangkat-card {
+        border-left: 4px solid #d4a373; /* Sebagai penanda alur di HP */
+    }
+}
