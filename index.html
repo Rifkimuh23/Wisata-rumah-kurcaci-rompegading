@@ -188,54 +188,87 @@
   <section id="struktur" class="struktur-desa" data-aos="fade-up">
   <h2>Struktur Organisasi Pemerintah Desa Rompegading</h2>
   
-  <div class="tree-row">
-    <div class="perangkat-card bpd"><h4>Ketua BPD</h4></div>
-    <div class="line-horizontal"></div>
-    <div class="perangkat-card kades">
-      <img src="imgjpgvidio/arfa.jpg" alt="Kepala Desa">
-      <h4>Arfah, S.Pd</h4>
-      <p>Kepala Desa</p>
+ <div class="tree-row">
+    <div class="perangkat-card bpd" onclick="openStaffModal('Ketua BPD')" style="cursor: pointer;">
+        <div class="img-placeholder"></div> <h4>Ketua BPD</h4>
+        <p>Badan Permusyawaratan Desa</p>
     </div>
-  </div>
+
+    <div class="line-horizontal"></div>
+
+    <div class="perangkat-card kades" onclick="openStaffModal('Arfah, S.Pd')" style="cursor: pointer;">
+        <img src="imgjpgvidio/arfa.jpg" alt="Kepala Desa">
+        <h4>Arfah, S.Pd</h4>
+        <p>Kepala Desa</p>
+    </div>
+</div>
 
   <div class="tree-row">
-    <div class="line-vertical"></div>
-    <div class="perangkat-card sekdes">
-      <h4>Kaharuddin</h4>
-      <p>Sekretaris Desa</p>
-    </div>
+  <div class="line-vertical"></div>
+  
+  <div class="perangkat-card sekdes" onclick="openStaffModal('Kaharuddin')" style="cursor: pointer;">
+    <img src="imgjpgvidio/default.jpg" alt="Sekretaris Desa">
+    <h4>Kaharuddin</h4>
+    <p>Sekretaris Desa</p>
   </div>
+</div>
 
   <div class="perangkat-grid">
-    <div class="perangkat-card">
-      <img src="imgjpgvidio/syamsuddin.jpg" alt="KASI">
-      <h4>Syamsuddin</h4><p>KASI Pemerintahan</p>
-      <small>Staf: Winda Ahmadani</small>
-    </div>
-    <div class="perangkat-card">
-      <img src="imgjpgvidio/nuramalia.jpg" alt="KASI">
-      <h4>Nuramalia</h4><p>KASI Kesra/Pelayanan</p>
-      <small>Staf: Erni</small>
-    </div>
-    <div class="perangkat-card">
-      <h4>Nur Fadlan</h4><p>KAUR Keuangan</p>
-      <small>Staf: Sulfikar</small>
-    </div>
-    <div class="perangkat-card">
-      <h4>Fitriani Herman</h4><p>KAUR Umum/Perencanaan</p>
-      <small>Staf: Rosnia</small>
-    </div>
-  </div>
+  <div class="perangkat-card" onclick="openStaffModal('Syamsuddin')" style="cursor: pointer;">
+    <img src="imgjpgvidio/syamsuddin.jpg" alt="KASI Pemerintahan">
+    <h4>Syamsuddin</h4>
+    <p>KASI Pemerintahan</p>
+    <small>Klik untuk detail Staf: Winda Ahmadani</small>
+</div>
+
+<div class="perangkat-card" onclick="openStaffModal('Nuramalia')" style="cursor: pointer;">
+    <img src="imgjpgvidio/nuramalia.jpg" alt="KASI Kesra">
+    <h4>Nuramalia</h4>
+    <p>KASI Kesra / Pelayanan</p>
+    <small>Klik untuk detail Staf: Erni</small>
+</div>
+   <div class="perangkat-card" onclick="openStaffModal('Nur Fadlan')" style="cursor: pointer;">
+  <img src="imgjpgvidio/default.jpg" alt="KAUR Keuangan">
+  <h4>Nur Fadlan</h4>
+  <p>KAUR Keuangan</p>
+  <small>Klik untuk detail Staf: Sulfikar</small>
+</div>
+
+<div class="perangkat-card" onclick="openStaffModal('Fitriani Herman')" style="cursor: pointer;">
+  <img src="imgjpgvidio/default.jpg" alt="KAUR Umum">
+  <h4>Fitriani Herman</h4>
+  <p>KAUR Umum/Perencanaan</p>
+  <small>Klik untuk detail Staf: Rosnia</small>
+</div>
 
   <div class="dusun-section">
-    <h4>Kepala Dusun</h4>
-    <div class="perangkat-grid">
-      <div class="perangkat-card small"><h4>Darwis</h4><p>Kadun Moncongjai</p></div>
-      <div class="perangkat-card small"><h4>Zulkifli</h4><p>Kadun Bululohe</p></div>
-      <div class="perangkat-card small"><h4>M. Nasir</h4><p>Kadun Pattiro</p></div>
-      <div class="perangkat-card small"><h4>Marwan</h4><p>Kadun Laniti Labuaja</p></div>
+  <h4>Kepala Dusun</h4>
+  <div class="perangkat-grid">
+    <div class="perangkat-card small" onclick="openStaffModal('Darwis')" style="cursor: pointer;">
+      <div class="img-placeholder small"></div>
+      <h4>Darwis</h4>
+      <p>Kadun Moncongjai</p>
+    </div>
+    
+    <div class="perangkat-card small" onclick="openStaffModal('Zulkifli')" style="cursor: pointer;">
+      <div class="img-placeholder small"></div>
+      <h4>Zulkifli</h4>
+      <p>Kadun Bululohe</p>
+    </div>
+    
+    <div class="perangkat-card small" onclick="openStaffModal('M. Nasir')" style="cursor: pointer;">
+      <div class="img-placeholder small"></div>
+      <h4>M. Nasir</h4>
+      <p>Kadun Pattiro</p>
+    </div>
+    
+    <div class="perangkat-card small" onclick="openStaffModal('Marwan')" style="cursor: pointer;">
+      <div class="img-placeholder small"></div>
+      <h4>Marwan</h4>
+      <p>Kadun Laniti Labuaja</p>
     </div>
   </div>
+</div>
 </section>
 
   <section id="lokasi">
@@ -286,6 +319,13 @@
       <p>© 2025 Muh. Rifki-KKNT115 Unhas - Desa Rompegading, Maros</p>
     </footer>
   </body>
+  <div id="staffModal" class="modal-staff">
+  <div class="modal-content-staff">
+    <span class="close-modal" onclick="closeStaffModal()">&times;</span>
+    <div id="modalBody">
+      </div>
+  </div>
+</div>
   <script>
   const menu = document.querySelector('#mobile-menu');
   const menuLinks = document.querySelector('.nav-list');
@@ -350,5 +390,155 @@
             closeLightbox();
         }
     }
+    // Data Lengkap Staf sesuai Bagan
+const staffData = {
+    "Arfah, S.Pd": {
+        role: "Kepala Desa",
+        staf: null, // Tidak menggunakan staf
+        tugas: "Memimpin penyelenggaraan pemerintahan desa, membina kehidupan kemasyarakatan, dan memelihara ketentraman serta ketertiban masyarakat Desa Rompegading.",
+        img: "imgjpgvidio/arfa.jpg"
+    },
+    "Ketua BPD": {
+        role: "Ketua Badan Permusyawaratan Desa",
+        staf: null,
+        tugas: "Membahas dan menyepakati rancangan Peraturan Desa bersama Kepala Desa, menampung dan menyalurkan aspirasi masyarakat.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Kaharuddin": {
+        role: "Sekretaris Desa Rompegading",
+        staf: null, // Sesuai permintaan: tidak memakai staf
+        tugas: "Memimpin Sekretariat Desa dan membantu Kepala Desa dalam bidang administrasi, tata usaha, keuangan, dan pelaporan.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Darwis": {
+        role: "Kepala Dusun Moncongjai",
+        staf: null,
+        tugas: "Membantu Kepala Desa dalam pelaksanaan tugas kewilayahan di Dusun Moncongjai.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Zulkifli": {
+        role: "Kepala Dusun Bululohe",
+        staf: null,
+        tugas: "Membantu Kepala Desa dalam pelaksanaan tugas kewilayahan di Dusun Bululohe.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "M. Nasir": {
+        role: "Kepala Dusun Pattiro",
+        staf: null,
+        tugas: "Membantu Kepala Desa dalam pelaksanaan tugas kewilayahan di Dusun Pattiro.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Marwan": {
+        role: "Kepala Dusun Laniti Labuaja",
+        staf: null,
+        tugas: "Membantu Kepala Desa dalam pelaksanaan tugas kewilayahan di Dusun Laniti Labuaja.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    // Tetap masukkan KASI/KAUR yang memakai staf di sini...
+    "Syamsuddin": {
+        role: "KASI Pemerintahan",
+        staf: "Winda Ahmadani",
+        tugas: "Mengelola administrasi kependudukan dan pertanahan desa.",
+        img: "imgjpgvidio/syamsuddin.jpg"
+    },
+    "Nuramalia": {
+        role: "KASI Kesra / Pelayanan",
+        staf: "Erni",
+        tugas: "Mengurus pelayanan publik dan kesejahteraan masyarakat.",
+        img: "imgjpgvidio/nuramalia.jpg"
+    },
+    "Nur Fadlan": {
+        role: "KAUR Keuangan",
+        staf: "Sulfikar",
+        tugas: "Mengelola sistem keuangan dan anggaran Dana Desa.",
+        img: "imgjpgvidio/default.jpg" // Ganti jika ada foto
+    },
+    "Fitriani Herman": {
+        role: "KAUR Umum / Perencanaan",
+        staf: "Rosnia",
+        tugas: "Menyusun rencana pembangunan desa dan administrasi umum.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Darwis": {
+        role: "Kepala Dusun Moncongjai",
+        staf: null,
+        tugas: "Melaksanakan pembinaan kemasyarakatan dan pembangunan di wilayah Dusun Moncongjai.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Zulkifli": {
+        role: "Kepala Dusun Bululohe",
+        staf: null,
+        tugas: "Melaksanakan pembinaan kemasyarakatan dan pembangunan di wilayah Dusun Bululohe.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "M. Nasir": {
+        role: "Kepala Dusun Pattiro",
+        staf: null,
+        tugas: "Melaksanakan pembinaan kemasyarakatan dan pembangunan di wilayah Dusun Pattiro.",
+        img: "imgjpgvidio/default.jpg"
+    },
+    "Marwan": {
+        role: "Kepala Dusun Laniti Labuaja",
+        staf: null,
+        tugas: "Melaksanakan pembinaan kemasyarakatan dan pembangunan di wilayah Dusun Laniti Labuaja.",
+        img: "imgjpgvidio/default.jpg"
+    }
+};
+
+// Fungsi membuka modal
+function openStaffModal(name) {
+    const data = staffData[name];
+    if (data) {
+        const modalBody = document.getElementById('modalBody');
+        modalBody.innerHTML = `
+            <img src="${data.img}" class="modal-staff-img" alt="${name}">
+            <h3>${name}</h3>
+            <p>${data.role}</p>
+            <div class="staff-info">
+                <strong>Staf Pembantu:</strong><br>
+                ${data.staf}<br><br>
+                <strong>Tupoksi:</strong><br>
+                ${data.tugas}
+            </div>
+        `;
+        document.getElementById('staffModal').style.display = 'flex';
+    }
+}
+
+function closeStaffModal() {
+    document.getElementById('staffModal').style.display = 'none';
+}
+
+// Tutup modal jika klik di luar kotak putih
+window.onclick = function(event) {
+    const modal = document.getElementById('staffModal');
+    const lightbox = document.getElementById('lightbox');
+    if (event.target == modal) closeStaffModal();
+    if (event.target == lightbox) closeLightbox(); // Tetap aktifkan fungsi lightbox lama Anda
+}
+function openStaffModal(name) {
+    const data = staffData[name];
+    if (data) {
+        const modalBody = document.getElementById('modalBody');
+        
+        // Cek apakah ada staf pembantu atau tidak
+        const stafHTML = data.staf 
+            ? `<br><strong>Staf Pembantu:</strong><br>${data.staf}<br>` 
+            : "";
+
+        modalBody.innerHTML = `
+            <img src="${data.img}" class="modal-staff-img" alt="${name}">
+            <h3>${name}</h3>
+            <p>${data.role}</p>
+            <div class="staff-info">
+                ${stafHTML}
+                <br>
+                <strong>Tupoksi:</strong><br>
+                ${data.tugas}
+            </div>
+        `;
+        document.getElementById('staffModal').style.display = 'flex';
+    }
+}
 </script>
 </html>
