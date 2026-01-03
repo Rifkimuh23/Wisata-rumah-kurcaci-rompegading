@@ -1076,3 +1076,45 @@ section {
 .card-content p {
     flex-grow: 1;         /* Mendorong harga dan tombol ke posisi paling bawah */
 }
+/* --- PERBAIKAN HEADER --- */
+header {
+  width: 100%;
+  min-height: 100vh; /* Menggunakan min-height agar area fleksibel jika teks panjang */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("imgjpgvidio/Latbel.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 80px 20px; /* Padding atas agar tidak tertutup Navbar */
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* --- PERBAIKAN KHUSUS HP --- */
+@media (max-width: 768px) {
+  header {
+    padding-top: 120px; /* Memberi ruang lebih besar di HP karena navbar menumpuk */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem; /* Ukuran dikecilkan agar tidak terpotong ke samping */
+    padding: 0 10px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+}
