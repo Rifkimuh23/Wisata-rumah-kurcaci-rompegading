@@ -126,18 +126,18 @@ footer {
   transform: scale(1.03);
 }
 
-/* --- UMKM SECTION --- */
+/* --- UMKM SECTION (RESPONSIVE & ALIGNED) --- */
 .umkm-container {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: stretch; /* Memaksa tinggi kartu sama di laptop */
+  flex-wrap: wrap;      /* Izinkan kartu turun ke bawah jika layar sempit */
+  gap: 20px;
   margin-top: 20px;
 }
 
 .umkm-card {
-  width: 300px;
+  width: 300px;         /* Lebar standar di laptop */
   background: white;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -147,37 +147,50 @@ footer {
   transition: 0.3s;
 }
 
-.umkm-card:hover {
-  transform: translateY(-10px);
-}
-
 .umkm-card img {
   width: 100%;
-  height: 200px; /* Tinggi gambar produk */
+  height: 200px;
   object-fit: cover;
-  display: block;
-  cursor: zoom-in;
 }
 
 .card-content {
   padding: 20px;
   text-align: center;
-  flex-grow: 1;
+  flex-grow: 1;        /* Mengambil sisa ruang kosong */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .card-content h3 {
-  font-size: 1.2rem;
+  min-height: 3rem;    /* Menjaga judul tetap sejajar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #2d4739;
-  margin-bottom: 10px;
 }
 
 .card-content p {
-  font-size: 0.9rem;
-  color: #666;
+  flex-grow: 1;        /* Mendorong harga & tombol ke bawah */
   margin-bottom: 15px;
+}
+
+.price {
+  font-weight: bold;
+  color: #d4a373;
+  margin-bottom: 15px;
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+  .umkm-container {
+    flex-direction: column; /* Susun kartu ke bawah di HP */
+    align-items: center;
+  }
+
+  .umkm-card {
+    width: 100%;       /* Kartu selebar layar HP */
+    max-width: 350px;  /* Tapi jangan terlalu lebar */
+  }
 }
 
 .price {
